@@ -1,0 +1,295 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    
+    font-family: sans-serif;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: #7aa2e9;
+}
+
+li {
+    list-style: none;
+}
+/* --------------------------------------PAGE HEADER & FOOTER + MAIN---------------------------------------------- */
+.page-header,
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    color: #7aa2e9;
+    background-color: #16161e;
+    
+    font-size: 16px;
+
+    height: 30px;
+    margin: 0px;
+    padding: 30px;
+}
+
+.page-header {
+    border-bottom: 2px solid #111117;
+}
+
+.page-header__branding, .page-header__actions, .page-footer__spacer, .page-footer__branding {
+    flex: 1 0; 
+}
+
+
+.page-header__branding,
+.page-footer__branding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-header__branding {
+    justify-content: left;
+}
+
+.page-header__logo-img,
+.page-footer__logo-img {
+    width: 32px;
+    height: 32px;
+}
+
+.page-header__nav,
+.page-header__actions {
+    font-size: 18px;
+}
+
+.page-header__nav {
+    flex-shrink: 0;
+    margin: 20px;
+    padding: 12px;
+    font-weight: 700;
+    border: 2px solid #7aa2e9;
+    border-radius: 6px;
+}
+
+.page-header__actions {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    flex-shrink: 1;
+    padding: 12px;
+    font-weight: 700;
+    border: 2px solid #7aa2e9;
+    border-radius: 6px;
+
+}
+
+.page-main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    background-color: #1a1b26;
+}
+
+.form-success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    color: #7aa2e9;
+    background-color: #16161e;
+    
+    
+
+    font-family: sans-serif;
+    font-size: 18px;
+
+    height: 10px;
+    min-width: 100%;
+    margin: 0px;
+    padding: 30px;
+}
+/* ------------------------------------------INDEX PAGE-------------------------------------------------- */
+.list-messages {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 0;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    margin: 0px;
+    padding: 10px;
+    
+}
+
+.list-messages__single-message {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    min-height: 50px;
+    
+    min-width: 170px;
+    max-width: 400px;
+    font-family: Calibri, sans-serif;
+    background-color: #16161e;
+    border: 2px solid #111117;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px;
+}
+
+ .list-messages__message-head, .list-messages__title,
+ .list-messages__author, .list-messages__text, .list-messages__message-foot {
+    margin: 0px;
+ }
+ 
+ .list-messages__title {
+     color: #DEB887;
+ }
+ 
+ .list-messages__author {
+     color: #787c99
+ }
+
+ .list-messages__text {
+    justify-content: center;
+    flex-wrap: wrap;
+    min-width: 150px;
+    padding: 3px 5px;
+ }
+
+ .list-messages__message-head, .list-messages__message-foot {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+
+.list-messages__message-foot {
+    color: #DEB887;
+    align-items: center;
+    height: 25px;
+    gap: 20px
+}
+
+.list-messages__timestamp {
+    text-align: right;
+}
+
+.list-messages__delete {
+    color: #dc143c;
+}
+
+/* ------------------------------------PAGES-------------------------------- */
+
+.join-page__header {
+    color: #7aa2e9;
+}
+
+.login-form, .signup-form, .join-form, .new-message-form {
+    display: flex;
+    flex-direction: column;
+    height:fit-content;
+    width: 400px;
+    justify-content: center; 
+    align-items: center; 
+
+    color: #7aa2e9;
+    background-color: #16161e;
+    border: 2px solid #111117;
+    border-radius: 8px;
+    
+    padding: 10px;
+}
+
+.login-form__header, .signup-form__header, .new-message-form__header {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 15px;
+    margin-top: 10px;
+}
+
+.login-form__email, .login-form__password,
+.signup-form__first-name, .signup-form__last-name,
+.signup-form__gmail, .signup-form__password, .signup-form__password-confirm,
+.join-form__passcode,
+.new-message-form__title, .new-message-form__message {
+    display: flex;
+    width: stretch;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 3px 10px;
+    padding: 0px 10px;
+}
+
+.login-form__input,
+.signup-form__input,
+.join-form__input,
+.new-message-form__input {
+   height: 20px;
+   font-family: monospace;
+   color: #7aa2e9;
+   background-color: #1a1b26;
+   border-style: none;
+   border: 2px solid #111117;
+   border-radius: 0px; 
+   padding-left: 6px;
+}
+
+.new-message-form #message {
+    height: 100px;
+    width: 240px;
+    resize: none;
+    word-break: keep-all;
+}
+
+.login-form__input:-webkit-autofill,
+.signup-form__input:-webkit-autofill,
+.join-form__input:-webkit-autofill,
+.new-message-form__input:-webkit-autofill {
+    -webkit-text-fill-color: #7aa2e9 !important; /* Цвет текста */
+    box-shadow: 0 0 0px 1000px #1a1b26 inset !important; /* Наш цвет фона */
+    
+}
+
+.login-form input:focus,
+.signup-form input:focus,
+.join-form input:focus,
+.new-message-form input:focus,
+.new-message-form textarea:focus {
+    outline: none;
+    caret-color: #7aa2e9;
+}
+
+
+.login-form__btn, .signup-form__btn, .join-form__btn, .new-message-form__btn {
+    color: #7aa2e9;
+    background-color: #16161e;
+    font-size: 14px;
+    font-weight: 700;
+    border: 2px solid #111117;
+    border-radius: 4px;
+    height: max-content;
+    width:max-content;
+    padding: 5px 7px;
+    margin: 10px;
+    margin-top: 25px;
+}
+.join-form__btn, .new-message-form__btn {
+    margin-top: 15px;
+}

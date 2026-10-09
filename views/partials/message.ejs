@@ -1,0 +1,16 @@
+<li class="list-messages__single-message">
+    <div class="list-messages__message-head">
+        <p class="list-messages__title"><%= message.title %></p>
+        <p class="list-messages__author"><%= message.author? `${message.author}` : "Anonymous"%></p>
+    </div>
+    <p class="list-messages__text"><%= message.text %></p>
+
+    <% if (currentUser?.is_member) { %>
+    <div class="list-messages__message-foot">
+        <% if (currentUser?.is_admin) { %>
+            <a href="/messages/<%= message.id %>/delete" class="list-messages__delete">Delete</a>
+        <% } %>
+            <p class="list-messages__timestamp"> <%= message.timestamp.toLocaleString('en-EN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: '2-digit' }) %> </p> 
+        </div>
+    <% } %>
+</li>

@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+<main class="page-main">
+    
+    <form method="POST" action="/messages/new" class="new-message-form">
+        <h2 class="new-message-form__header">Create new message</h2>
+        <div class="new-message-form__title">
+            <label for="title" class="new-message-form__lable">Title</label>
+            <input type="text" id="title" name="title" class="new-message-form__input" required>
+        </div>
+
+        <div class="new-message-form__message">
+            <label for="message" class="new-message-form__lable">Message</label>
+            <textarea id="message" name="message" class="new-message-form__input" required></textarea>
+        </div>
+
+        <button type="submit" class="new-message-form__btn">Send</button>
+    </form>
+
+    <% if (errors && errors.length > 0) { %>
+        <ul class="form-errors">
+        <% errors.forEach(err => { %>
+            <li><%= err.msg %></li>
+        <% }) %>
+        </ul>
+    <% } %>
+</main>
+
+<%- include('partials/footer') %>

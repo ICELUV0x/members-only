@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+
+<main class="page-main">
+    <h2 class="join-page__header">Hello <span style="text-decoration: underline solid #7aa2e9;"><%- currentUser.first_name %></span>, here you can join like a member</h2>
+
+    <form method="POST" action="/join" class="join-form">
+        <div class="join-form__passcode">
+            <label for="member_passcode" class="join-form__label">Enter member code:</label>
+            <input type="password" name="member_passcode" class="join-form__input" autocomplete="new-password" required>
+        </div>
+
+        <button type="submit" class="join-form__btn">Confirm</button>
+    </form>
+
+    <% if (errors && errors.length > 0) { %>
+        <ul class="form-errors">
+        <% errors.forEach(err => { %>
+            <li><%= err.msg %></li>
+        <% }) %>
+        </ul>
+    <% } %>
+</main>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+<main class="page-main">
+    
+    <form method="POST" action="/log-in" class="login-form">
+        <h2 class="login-form__header">Log In</h2>
+        <div class="login-form__email">
+            <label for="email" class="login-form__label">Email</label>
+            <input type="email" id="email" name="email" class="login-form__input" required autocomplete="email">
+        </div>
+
+        <div class="login-form__password">
+            <label for="password" class="login-form__label">Password</label>
+            <input type="password" id="password" name="password" class="login-form__input" required autocomplete="current-password">
+        </div>
+
+        <button type="submit" class="login-form__btn">Confirm</button>
+    </form>
+
+    <% if (errors && errors.length > 0) { %>
+        <ul class="form-errors">
+        <% errors.forEach(err => { %>
+            <li><%= err.msg %></li>
+        <% }) %>
+        </ul>
+    <% } %>
+</main>
+
+<%- include('partials/footer') %>

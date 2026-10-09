@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+
+<main class="page-main">
+    
+    <form method="POST" action="/sign-up" class="signup-form">
+
+        <h2 class="signup-form__header">Sign Up</h2>
+
+        <div class="signup-form__first-name">
+            <label for="first_name" class="signup-form__label">First Name</label>
+            <input type="text" id="first_name" name="first_name" class="signup-form__input" required>
+        </div>
+
+        <div class="signup-form__last-name">
+            <label for="last_name" class="signup-form__label">Last Name</label>
+            <input type="text" id="last_name" name="last_name" class="signup-form__input" required>
+        </div>
+
+        <div class="signup-form__gmail">
+            <label for="email" class="signup-form__label">Email</label>
+            <input type="email" id="email" name="email" class="signup-form__input" required autocomplete="email">
+        </div>
+
+        <div class="signup-form__password">
+            <label for="password" class="signup-form__label">Password</label>
+            <input type="password" id="password" name="password" class="signup-form__input" required autocomplete="new-password">
+        </div>
+
+        <div class="signup-form__password-confirm">
+            <label for="confirmPassword" class="signup-form__label">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="signup-form__input" required autocomplete="new-password">
+        </div>
+
+        <button type="submit" class="signup-form__btn">Confirm</button>
+    </form>
+
+    <% if (errors && errors.length > 0) { %>
+        <ul class="form-errors">
+        <% errors.forEach(err => { %>
+            <li><%= err.msg %></li>
+        <% }) %>
+        </ul>
+    <% } %>
+</main>
+
+<%- include('partials/footer') %>
+
+
+
