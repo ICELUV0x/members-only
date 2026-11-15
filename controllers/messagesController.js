@@ -31,10 +31,12 @@ exports.newGet = async (req, res, next) => {
 
 exports.newPost = async (req, res, next) => {
   const { title, message } = req.body;
-  const memberId = req.user.id;
+  const member_id = req.user.id;
+
+
 
   try {
-    await messagesQueries.createMessage(memberId, title, message);
+    await messagesQueries.createMessage(member_id, title, message);
     req.flash('success','Message successfully created');
     res.redirect('/');
   } catch(err) {

@@ -1,23 +1,40 @@
-const pool = require('../../config/db'); // Path to DB connection pool
+const prisma = require('../../lib/prisma');
+
+
 
 // Basic queries
-exports.createMember = async (first_name, last_name, email, password) => { 
-  await pool.query('INSERT INTO members (first_name, last_name, email, password) VALUES ($1,$2,$3,$4)', [first_name, last_name, email, password]); // Query DB
+
+exports.createMember = async (first_name, last_name, email, password) => {
+  return prisma.members.create({
+    data: {
+      first_name,
+      last_name,
+      email,
+      password,
+    },
+  });
 };
 
+
 exports.updateMembership = async (id) => {
-  await pool.query('UPDATE members SET is_member = true WHERE id = $1', [id]);
+  return prisma.members.update({
+    where: { id },
+    data: { is_member: true},
+  });
 };
 
 //MISC queries
 exports.findByEmail = async (email) => {
-  const { rows } = await pool.query('SELECT * FROM members WHERE email = $1', [email]);
-  return rows[0];
+  return prisma.members.findUnique({
+    where: { email },
+  });
 };
 
 exports.findById = async (id) => {
-  const { rows } = await pool.query('SELECT * FROM members WHERE id = $1', [id]);
-  return rows[0];
+  return prisma.members.findUnique({
+    where: { id },
+  });
 };
+
 
 
